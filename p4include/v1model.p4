@@ -112,6 +112,12 @@ extern register<T> {
     void write(in bit<32> index, in T value);
 }
 
+extern ExternIncrease {
+    ExternIncrease(bit<8> attribute_example);
+    void increase();
+}
+
+
 // used as table implementation attribute
 extern action_profile {
     action_profile(bit<32> size);
