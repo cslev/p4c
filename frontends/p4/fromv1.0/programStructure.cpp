@@ -2402,6 +2402,10 @@ void ProgramStructure::populateOutputNames() {
         "random",
         "digest",
         "mark_to_drop",
+        // -- LEVI
+        "p4_logger",
+        // "make_uint64",
+        // -- END LEVI
         "hash",
         "resubmit",
         "recirculate",
