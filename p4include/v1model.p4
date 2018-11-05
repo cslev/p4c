@@ -125,6 +125,13 @@ extern action_profile {
 
 // Get a random number in the range lo..hi
 extern void random<T>(out T result, in T lo, in T hi);
+
+// -- LEVI
+// extern void make_uint64<T>(out T result, in T double_number, in T precision);
+extern void p4_logger<T>(in T a);
+// -- END LEVI
+
+
 // If the type T is a named struct, the name is used
 // to generate the control-plane API.
 extern void digest<T>(in bit<32> receiver, in T data);
@@ -141,6 +148,8 @@ enum HashAlgorithm {
 }
 
 extern void mark_to_drop();
+
+
 extern void hash<O, T, D, M>(out O result, in HashAlgorithm algo, in T base, in D data, in M max);
 
 extern action_selector {
@@ -199,6 +208,9 @@ sets the standard_metadata checksum_error bit.
 @param algo       Algorithm to use for checksum (not all algorithms may be supported).
                   Must be a compile-time constant.
 */
+
+
+
 extern void verify_checksum_with_payload<T, O>(in bool condition, in T data, inout O checksum, HashAlgorithm algo);
 /**
 Computes the checksum of the supplied data including the payload.
