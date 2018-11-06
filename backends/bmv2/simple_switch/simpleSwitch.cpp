@@ -100,7 +100,6 @@ EXTERN_CONVERTER_SINGLETON(mark_to_drop)
 EXTERN_CONVERTER_SINGLETON(random)
 // -- LEVI (goto line 347 as well)
 EXTERN_CONVERTER_SINGLETON(p4_logger)
-// EXTERN_CONVERTER_SINGLETON(make_uint64)
 // -- END LEVI
 EXTERN_CONVERTER_SINGLETON(truncate)
 EXTERN_CONVERTER_SINGLETON(register)
@@ -359,24 +358,6 @@ CONVERT_EXTERN_FUNCTION(p4_logger) {
   return primitive;
 }
 
-// CONVERT_EXTERN_FUNCTION(make_uint64) {
-//   if (mc->arguments->size() != 3)
-//   {
-//     modelError("Expected 3 arguments for %1%", mc);
-//     return nullptr;
-//   }
-//   auto primitive = mkPrimitive("make_uint64");
-//   auto params = mkParameters(primitive);
-//   primitive->emplace_non_null("source_info", mc->sourceInfoJsonObj());
-//   auto result = ctxt->conv->convert(mc->arguments->at(0)->expression);
-//   auto double_number = ctxt->conv->convert(mc->arguments->at(1)->expression);
-//   auto precision= ctxt->conv->convert(mc->arguments->at(2)->expression);
-//   params->append(result);
-//   params->append(double_number);
-//   params->append(precision);
-//   return primitive;
-// }
-// -- END LEVI
 
 
 CONVERT_EXTERN_FUNCTION(truncate) {

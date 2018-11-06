@@ -114,15 +114,6 @@ struct Random_Model : public ::Model::Elem {
     ::Model::Elem   modify_field_rng_uniform;
 };
 
-// -- LEVI (go to line 268)
-// struct MakeUint64_Model : public ::Model::Elem {
-//     MakeUint64_Model() : Elem("make_uint64"),
-//                      modify_field_rng_uniform("modify_field_rng_uniform") {}
-//     ::Model::Elem   modify_field_rng_uniform;
-// };
-// -- END LEVI
-
-
 class Truncate : public Model::Extern_Model {
  public:
     Truncate() : Extern_Model("truncate"), length_type(IR::Type::Bits::get(32)) {}
@@ -267,7 +258,6 @@ class V1Model : public ::Model::Model {
             registers(), drop("mark_to_drop"),
             // -- LEVI (go to line 300-ish as well and 117)
             p4_logger("p4_logger"),
-            // make_uint64(),
             // -- END LEVI
             recirculate("recirculate"), verify_checksum("verify_checksum"),
             update_checksum("update_checksum"),
@@ -306,9 +296,8 @@ class V1Model : public ::Model::Model {
     Algorithm_Model     algorithm;
     Register_Model      registers;
     ::Model::Elem       drop;
-    // -- LEVI (go to line 117 and 268 too)
+    // -- LEVI (go to line 260)
     ::Model::Elem       p4_logger;
-    // MakeUint64_Model    make_uint64;
     // -- END LEVI
     ::Model::Elem       recirculate;
     ::Model::Elem       verify_checksum;

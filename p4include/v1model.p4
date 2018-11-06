@@ -127,7 +127,6 @@ extern action_profile {
 extern void random<T>(out T result, in T lo, in T hi);
 
 // -- LEVI
-// extern void make_uint64<T>(out T result, in T double_number, in T precision);
 extern void p4_logger<T>(in T a);
 // -- END LEVI
 
