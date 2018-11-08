@@ -256,7 +256,7 @@ class V1Model : public ::Model::Model {
             verify("verifyChecksum", headersType), compute("computeChecksum", headersType),
             digest_receiver(), hash(), algorithm(),
             registers(), drop("mark_to_drop"),
-            // -- LEVI (go to line 300-ish as well and 117)
+            // -- LEVI (go to line 300-ish)
             p4_logger("p4_logger"),
             // -- END LEVI
             recirculate("recirculate"), verify_checksum("verify_checksum"),
